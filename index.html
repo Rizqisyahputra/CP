@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalTrade Indonesia - Perusahaan Ekspor Terpercaya</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Variables */
+        :root {
+            --primary-color: #00539C;
+            --secondary-color: #EEA47F;
+            --text-color: #333;
+            --light-gray: #f4f4f4;
+            --white: #fff;
+            --dark-blue: #003366;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        
+        .social-media a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .language-select {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .language-select select {
+            appearance: none;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding-right: 20px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-blue);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex-basis: 50%;
+            padding-right: 40px;
+        }
+        
+        .about-image {
+            flex-basis: 45%;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-info .btn {
+            padding: 8px 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            background-color: var(--white);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            text-align: center;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 auto;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-name h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .client-name p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/600');
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            flex-basis: 45%;
+        }
+        
+        .contact-form {
+            flex-basis: 50%;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .info-icon {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .info-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .info-text p, .info-text a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                flex-basis: 100%;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-info, .contact-form {
+                flex-basis: 100%;
+            }
+            
+            .contact-info {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .top-bar .container {
+                flex-direction: column;
+            }
+            
+            .social-media {
+                margin-top: 10px;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .btn {
+                margin-bottom: 15px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="mailto:info@globaltrade-indonesia.com">info@globaltrade-indonesia.com</a>
+                    <a href="tel:+6221123456">+62 21 123456</a>
+                </div>
+                <div class="social-media">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="container nav-container">
+            <a href="#" class="logo">Global<span>Trade</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li class="language-select">
+                        <select>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="en">English</option>
+                            <option value="zh">中文</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mitra Ekspor Terpercaya untuk Pasar Global</h1>
+                <p>Menyediakan produk Indonesia berkualitas tinggi dengan layanan ekspor profesional ke seluruh dunia</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn">Lihat Produk Kami</a>
+                    <a href="#contact" class="btn btn-secondary">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang GlobalTrade Indonesia</h2>
+                <p>Perusahaan ekspor terkemuka dengan pengalaman lebih dari 15 tahun melayani pasar internasional</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Keunggulan Kami</h3>
+                    <p>GlobalTrade Indonesia adalah perusahaan ekspor terpercaya yang berfokus pada penyediaan produk Indonesia berkualitas tinggi untuk pasar global. Kami berkomitmen untuk memberikan layanan ekspor profesional dengan standar internasional.</p>
+                    <p>Dengan jaringan pemasok yang luas dan tim yang berpengalaman, kami memastikan setiap produk memenuhi standar kualitas tertinggi dan persyaratan regulasi internasional. Kami memiliki kemampuan untuk menyesuaikan produk sesuai kebutuhan pasar Anda.</p>
+                    <p>Kepatuhan terhadap praktik perdagangan yang adil dan berkelanjutan menjadi prioritas utama kami. Kami bekerja sama dengan produsen lokal yang menerapkan praktik ramah lingkungan dan mendukung komunitas lokal.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="GlobalTrade Indonesia Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Produk Unggulan</h2>
+                <p>Kami menawarkan berbagai produk berkualitas ekspor dengan sertifikasi internasional</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Agricultural Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Produk Pertanian</h3>
+                        <p>Kopi, teh, rempah-rempah, dan produk pertanian lainnya dengan kualitas premium dari berbagai wilayah Indonesia.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Furniture Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Furniture & Kerajinan</h3>
+                        <p>Furniture kayu jati, produk rotan, dan berbagai kerajinan tangan dengan kualitas ekspor dan desain unik.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Textile Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Tekstil & Garmen</h3>
+                        <p>Produk tekstil berkualitas tinggi, batik, dan garmen dengan standar internasional dan desain modern.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Food Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Makanan Olahan</h3>
+                        <p>Berbagai produk makanan olahan dengan sertifikasi halal dan standar keamanan pangan internasional.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Cosmetic Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kosmetik & Perawatan</h3>
+                        <p>Produk kosmetik dan perawatan tubuh berbahan alami dengan sertifikasi BPOM dan standar internasional.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/300" alt="Electronic Products">
+                    </div>
+                    <div class="product-info">
+                        <h3>Elektronik & Manufaktur</h3>
+                        <p>Produk elektronik dan manufaktur dengan standar internasional dan jaminan kualitas terbaik.</p>
+                        <a href="#" class="btn">Detail Produk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Kami menyediakan layanan ekspor komprehensif untuk memastikan transaksi internasional berjalan lancar</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Sourcing Produk</h3>
+                    <p>Kami membantu Anda menemukan produk berkualitas terbaik dari ribuan produsen terpercaya di Indonesia sesuai dengan spesifikasi yang Anda butuhkan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Dokumentasi Ekspor</h3>
+                    <p>Tim kami menangani seluruh dokumentasi ekspor yang diperlukan, termasuk sertifikat asal, dokumen pengiriman, dan persyaratan regulasi lainnya.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚢</div>
+                    <h3>Layanan Logistik</h3>
+                    <p>Kami mengelola seluruh proses logistik dari Indonesia ke negara tujuan, termasuk pengiriman laut, udara, dan multi-modal.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Solusi Pembayaran</h3>
+                    <p>Kami menyediakan berbagai pilihan metode pembayaran yang aman dan nyaman, termasuk Letter of Credit, T/T, dan opsi pembayaran internasional lainnya.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Kepatuhan Regulasi</h3>
+                    <p>Kami memastikan semua produk memenuhi persyaratan regulasi dan kepatuhan di negara tujuan, termasuk sertifikasi dan pengujian yang diperlukan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Layanan Kustomisasi</h3>
+                    <p>Kami menawarkan layanan kustomisasi produk untuk memenuhi permintaan spesifik pasar Anda, mulai dari pengemasan hingga branding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Klien</h2>
+                <p>Apa kata klien kami tentang layanan ekspor yang kami berikan</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"GlobalTrade Indonesia telah menjadi mitra ekspor kami selama lebih dari 5 tahun. Mereka selalu konsisten dalam menyediakan produk berkualitas tinggi dengan pengiriman tepat waktu. Layanan mereka sangat profesional dan dapat diandalkan."</p>
+                    <div class="client-info">
+                        <div class="client-image">
+                            <img src="/api/placeholder/100/100" alt="Client">
+                        </div>
+                        <div class="client-name">
+                            <h4>David Chen</h4>
+                            <p>Purchasing Manager, ABC Trading Co., Ltd. - China</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Siap Memulai Kerjasama Bisnis?</h2>
+            <p>Hubungi tim kami untuk konsultasi gratis dan penawaran produk terbaik untuk bisnis Anda.</p>
+            <a href="#contact" class="btn">Diskusikan Kebutuhan Anda</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Jangan ragu untuk menghubungi kami untuk informasi lebih lanjut atau permintaan penawaran</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>Alamat</h4>
+                            <p>Jl. Sudirman No. 123, Jakarta Pusat 10220, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div class="info-text">
+                            <h4>Telepon</h4>
+                            <p><a href="tel:+6221123456">+62 21 123456</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@globaltrade-indonesia.com">info@globaltrade-indonesia.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-text">
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama Lengkap *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Alamat Email *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Perusahaan">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subjek *" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Pesan Anda *" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang Kami</h3>
+                    <p>GlobalTrade Indonesia adalah perusahaan ekspor terpercaya yang berfokus pada penyediaan produk Indonesia berkualitas tinggi untuk pasar global dengan layanan ekspor profesional.</p>
+                    <p>Kami berkomitmen untuk memberikan solusi ekspor terbaik dengan standar kualitas internasional.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="#">Katalog Produk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Produk Kami</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Produk Pertanian</a></li>
+                        <li><a href="#">Furniture & Kerajinan</a></li>
+                        <li><a href="#">Tekstil & Garmen</a></li>
+                        <li><a href="#">Makanan Olahan</a></li>
+                        <li><a href="#">Kosmetik & Perawatan</a></li>
+                        <li><a href="#">Elektronik & Manufaktur</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-newsletter">
+                    <h3>Berlangganan Newsletter</h3>
+                    <p>Dapatkan informasi terbaru tentang produk dan layanan kami</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Alamat Email Anda">
+                        <button type="submit">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GlobalTrade Indonesia. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.backgroundColor = 'var(--white)';
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
